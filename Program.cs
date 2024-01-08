@@ -7,11 +7,6 @@ namespace Sistemu_Programmesana
         public static void Main(string[] args)
         {
             string[] tasks = {"Iziet", "uzd1", "uzd2", "uzd3", "uzd4"};
-            // uzd1();
-            // uzd2();
-            // uzd3();
-            // uzd4();
-
             bool exit = false;
 
             while (exit == false)
