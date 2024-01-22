@@ -29,7 +29,7 @@ namespace Sistemu_Programmesana
                         exit = true;
                         break;
                     case 2:
-                        tasks.uzd1_3();
+                        tasks.uzd3_2();
                         break;
                     case 3:
                         tasks.uzd2_3();

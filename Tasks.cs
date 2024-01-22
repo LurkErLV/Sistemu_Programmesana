@@ -105,6 +105,41 @@ namespace Sistemu_Programmesana
             }
         }
 
+        public void uzd3_2()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                if (i == 0)
+                {
+                    Console.Write("y/x  :  ");
+                    for (int j = 1; j <= 9; j++)
+                    {
+                        Console.Write(j + "       ");
+                    }
+                    Console.WriteLine("\n-------------------------------------------------------------------------");
+                }
+                else
+                {
+                    Console.Write(i + "    :  ");
+                    for (int j = 1; j <= 9; j++)
+                    {
+                        if (i * j >= 10)
+                        {
+                            Console.Write(i * j + "      ");   
+                        }
+                        else
+                        {
+                            Console.Write(i * j + "       ");
+                        }
+                        if (j >= 9)
+                        {
+                            Console.WriteLine();
+                        }
+                    }
+                }
+            }
+        }
+
         // Cikli, nosacījuma operatori
         public void uzd1_3()
         {
