@@ -209,5 +209,78 @@ namespace Sistemu_Programmesana
                 Console.WriteLine();
             }
         }
+        
+        // While cikli
+
+        public void uzd1_4()
+        {
+            Console.Write("Ievadiet taisnstura garumu: ");
+            int width = Convert.ToInt32(Console.ReadLine());
+
+            int i = 0;
+            int j = 0;
+            
+            while (i < width)
+            {
+                while (j < width - i)
+                {
+                    Console.Write("*");
+                    j++;
+                }
+                Console.WriteLine();
+                j = 0;
+                i++;
+            }
+        }
+
+        public void uzd2_4()
+        {
+            string password = "Test1337";
+
+            while (true)
+            {
+                Console.Write("Ievadiet paroli: ");
+                string input = Console.ReadLine();
+
+                if (password == input)
+                {
+                    Console.WriteLine("Parole ir ievadita pareizi!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Parole ir ievadita nepareizi!");
+                }
+            }
+        }
+
+        public void uzd3_4()
+        {
+            Console.Write("Ievadiet skaitli R: ");
+            int R = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Ievadiet pirmo skaitli: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            int index = 0;
+            
+            do
+            {
+                if (index == R)
+                {
+                    Console.Write($"Reiz[{index}] = {number}");
+                    Console.WriteLine();
+                    break;
+                }
+                else
+                {
+                    Console.Write($"Reiz[{index}] = {number}*");
+                }
+                
+                number *= Convert.ToInt32(Console.ReadLine());
+                
+                index++;
+            } while (index <= R);
+        }
     }
 }
