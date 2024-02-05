@@ -29,14 +29,14 @@ namespace Sistemu_Programmesana
                         exit = true;
                         break;
                     case 2:
-                        tasks.uzd1_4();
+                        tasks.uzd1_5();
                         break;
-                    case 3:
-                        tasks.uzd2_4();
-                        break;
-                    case 4:
-                        tasks.uzd3_4();
-                        break;
+                    // case 3:
+                    //     tasks.uzd2_4();
+                    //     break;
+                    // case 4:
+                    //     tasks.uzd3_4();
+                    //     break;
                     default:
                         Console.WriteLine("Tāda uzdevuma nav!");
                         break;

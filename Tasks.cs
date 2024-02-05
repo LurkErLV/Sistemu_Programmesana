@@ -116,6 +116,7 @@ namespace Sistemu_Programmesana
                     {
                         Console.Write(j + "       ");
                     }
+
                     Console.WriteLine("\n-------------------------------------------------------------------------");
                 }
                 else
@@ -125,12 +126,13 @@ namespace Sistemu_Programmesana
                     {
                         if (i * j >= 10)
                         {
-                            Console.Write(i * j + "      ");   
+                            Console.Write(i * j + "      ");
                         }
                         else
                         {
                             Console.Write(i * j + "       ");
                         }
+
                         if (j >= 9)
                         {
                             Console.WriteLine();
@@ -205,11 +207,11 @@ namespace Sistemu_Programmesana
                 {
                     Console.Write("* ");
                 }
-                
+
                 Console.WriteLine();
             }
         }
-        
+
         // While cikli
 
         public void uzd1_4()
@@ -219,7 +221,7 @@ namespace Sistemu_Programmesana
 
             int i = 0;
             int j = 0;
-            
+
             while (i < width)
             {
                 while (j < width - i)
@@ -227,6 +229,7 @@ namespace Sistemu_Programmesana
                     Console.Write("*");
                     j++;
                 }
+
                 Console.WriteLine();
                 j = 0;
                 i++;
@@ -263,7 +266,7 @@ namespace Sistemu_Programmesana
             int number = Convert.ToInt32(Console.ReadLine());
 
             int index = 0;
-            
+
             do
             {
                 if (index == R)
@@ -276,11 +279,120 @@ namespace Sistemu_Programmesana
                 {
                     Console.Write($"Reiz[{index}] = {number}*");
                 }
-                
+
                 number *= Convert.ToInt32(Console.ReadLine());
-                
+
                 index++;
             } while (index <= R);
+        }
+
+        // Masīvi
+
+        public void uzd1_5()
+        {
+            Random rand = new Random();
+
+            Console.Write("Ievadiet pirma masiva izmeru:");
+            int length1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ievadiet otra masiva izmeru:");
+            int length2 = Convert.ToInt32(Console.ReadLine());
+
+            int[] arr1 = new int[length1];
+            int[] arr2 = new int[length2];
+
+
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = rand.Next(10, 101);
+            }
+
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = rand.Next(10, 101);
+            }
+
+            int[] biggestArray = arr1.Length > arr2.Length ? arr1 : arr2;
+            int[] smallestArray = arr1.Length < arr2.Length ? arr1 : arr2;
+
+            for (int i = 0; i <= biggestArray.Length; i++)
+            {
+                if (i == 0)
+                {
+                    Console.Write("pirmais \t");
+                    Console.Write("otrais \t \n");
+                }
+                else
+                {
+                    if (i - 1 >= smallestArray.Length)
+                    {
+                        Console.Write("\t");
+                    }
+                    else
+                    {
+                        Console.Write($"{smallestArray[i - 1]} \t");
+                    }
+
+                    Console.Write($"{biggestArray[i - 1]} \t \n");
+                }
+            }
+
+            int smallestNum1 = smallestArray[0];
+            for (int i = 0; i < smallestArray.Length; i++)
+            {
+                if (smallestNum1 > smallestArray[i])
+                {
+                    smallestNum1 = smallestArray[i];
+                }
+            }
+
+            int biggestNum2 = biggestArray[0];
+            for (int i = 0; i < biggestArray.Length; i++)
+            {
+                if (biggestNum2 < biggestArray[i])
+                {
+                    biggestNum2 = biggestArray[i];
+                }
+            }
+            
+            int smallestNum2 = biggestArray[0];
+            for (int i = 0; i < biggestArray.Length; i++)
+            {
+                if (smallestNum2 > biggestArray[i])
+                {
+                    smallestNum2 = biggestArray[i];
+                }
+            }
+
+            int biggestNum1 = smallestArray[0];
+            for (int i = 0; i < smallestArray.Length; i++)
+            {
+                if (biggestNum1 < smallestArray[i])
+                {
+                    biggestNum1 = smallestArray[i];
+                }
+            }
+
+            if (smallestNum1 == smallestNum2)
+            {
+                Console.WriteLine("Mazakais skaitlis ir gan pirma gan otra masiva un ir vienads ar " + smallestNum1);
+            } else if (smallestNum1 > smallestNum2)
+            {
+                Console.WriteLine("Mazakais skaitlis ir no otra masiva un ir vienads ar " + smallestNum2);
+            } else if (smallestNum1 < smallestNum2)
+            {
+                Console.WriteLine("Mazakais skaitlis ir no pirma masiva un ir vienads ar " + smallestNum1);
+            }
+            
+            if (biggestNum1 == biggestNum2)
+            {
+                Console.WriteLine("Lielakais skaitlis ir gan pirma gan otra masiva un ir vienads ar " + biggestNum1);
+            } else if (biggestNum1 > biggestNum2)
+            {
+                Console.WriteLine("Lielakais skaitlis ir no otra masiva un ir vienads ar " + biggestNum2);
+            } else if (biggestNum1 < biggestNum2)
+            {
+                Console.WriteLine("Lielakais skaitlis ir no pirma masiva un ir vienads ar " + biggestNum1);
+            }
         }
     }
 }
