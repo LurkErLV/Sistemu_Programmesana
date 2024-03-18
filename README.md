@@ -1,3 +1,3 @@
 Alberts Matrozis - 110.grupa
 
-Sistēmu programmēšanas uzdevumi
+Sistēmu programmēšanas uzdevumi c#
